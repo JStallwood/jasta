@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--lexend);
+    scroll-behavior: smooth;
+}
+
+.slide {
+    width: 70vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    margin: 3vmin;
+    padding: 0 3vmin;
+    font-size: var(--sf);
+}
+
+.slide h1 {
+    text-decoration: underline;
+    text-decoration-style: double;
+    text-decoration-color: var(--c1);
+}
+
+.slide .MJX-TEX {
+    font-size: var(--mjsf);
+}
+
+.slide table, tr, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    margin: 2vmin 0vmin;
+}
+
+.slide img {
+    align-self: center;
+    max-width: 30vw;
+}
+
+.slide-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20vmax;
+}
+
+mjx-container {
+    overflow-x: scroll;   
+}
+
+button {
+    width: 15vw;
+    height: 8vh;
+    font-size: var(--lf);
+    border: none;
+    color: white;
+    font-weight: bold;
+    background-color: var(--c2);
+    box-shadow: var(--c1) 0.3vmin 0.6vmin;
+}
+
+button:active {
+    transform: translateY(0.2vmin);
+}
