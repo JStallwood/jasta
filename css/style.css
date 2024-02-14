@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --lexend: 'Lexend', sans-serif;
+    --sf: 2vmin;
+    --mjsf: 2.6vmin;
+    --mf: 3vmin;
+    --mjmf: 3.6vmin;
+    --lf: 5vmin;
+    --c1: #FDB827;
+    --c2: #21209C;
+}
+
+.box {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.mjmf {
+    font-size: var(--mjmf);
+}
