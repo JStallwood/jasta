@@ -129,9 +129,49 @@
             $$
         </div>
         <div class="slide box">
+            <h2>Span of vectors</h2>
+            <p>Suppose we have a set of vectors \(\boldsymbol{X} = \{\boldsymbol{x}_{1}, \boldsymbol{x}_{2}, \dots, \boldsymbol{x}_{n}\}\) and a set of real number coefficients \(C = \{c_{1}, c_{2}, \dots, c_{n}\}\).</p>
+            <p>We can create a new vector, \(\boldsymbol{y}\) as a linear combination of our set of vectors and coefficients.</p>
+            $$ \boldsymbol{y} = \sum_{i = 1}^{n}c_{i}\boldsymbol{x}_{i}$$
+            <p>For example, let us suppose we have a set of vectors \(\boldsymbol{X} = \left\{\begin{bmatrix} 2 \\ 1\end{bmatrix}, \begin{bmatrix} 4 \\ -2\end{bmatrix}\right\}\), a set of coefficients \(C = \{c_{1}, c_{2}\}\), and another vector \(\boldsymbol{y} = \begin{bmatrix} 26 \\ -7\end{bmatrix}\).</p>
+            <p>Does \(\boldsymbol{y}\) belong to the span of \(\boldsymbol{X}\)?</p>
+        </div>
+        <div class="slide box">
+            <h2>Span of vectors</h2>
+            $$ 
+                \begin{array}{ll} 
+                    c_{1}\begin{bmatrix} 2 \\ 1\end{bmatrix} + c_{2}\begin{bmatrix} 4 \\ -2\end{bmatrix} = \begin{bmatrix} 26 \\ -7\end{bmatrix} \\ \\
+                    2c_{1} + 4c_{2} = 26 & \implies 2c_{2} = 13 - c_{1} \\
+                    c_{1} - 2c_{2} = -7 & \implies 2c_{1} - 13 = -7 \\
+                    & \implies c_{1} = 3 \\
+                    & \implies c_{2} = 5 \\ \\
+                    3\begin{bmatrix} 2 \\ 1\end{bmatrix} + 5\begin{bmatrix} 4 \\ -2\end{bmatrix} = \begin{bmatrix} 26 \\ -7\end{bmatrix}
+                \end{array}
+            $$
+        </div>
+        <div class="slide box">
+            <h2>Span of vectors</h2>
+            <p>Suppose we have a set of vectors \(\boldsymbol{X} = \left\{\begin{bmatrix} 2 \\ 1\end{bmatrix}, \begin{bmatrix} 4 \\ -2\end{bmatrix}\right\}\). Can we find equations for \(c_{1}, c_{2}\) such that we could get any vector \(\boldsymbol{y} \in \mathbb{R}^{2}\)?</p>
+            $$
+                \begin{array}{ll} 
+                    2c_{1} + 4c_{2} = y_{1} & \implies c_{1} = \frac{y_{1}}{2} - 2c_{2} \\
+                    & \implies c_{2} = \frac{y_{1} - 2y_{2}}{8} \\
+                    & \implies c_{1} = \frac{y_{1} + 2y_{2}}{4}
+                \end{array} 
+            $$
+            <p>Suppose we seek \(\boldsymbol{y} = \begin{bmatrix} 4 \\ 4\end{bmatrix}\):</p>
+            $$ 
+                \begin{array}{ll} 
+                    c_{1} = 3 \\
+                    c_{2} = -\frac{1}{2} \\
+                    3\begin{bmatrix} 2 \\ 1 \end{bmatrix} - \frac{1}{2}\begin{bmatrix}4 \\ -2\end{bmatrix} = \begin{bmatrix} 4 \\ 4 \end{bmatrix}
+                \end{array}
+            $$
+        </div>
+        <div class="slide box">
             <h2>Matrices: Definitions</h2>
             <p>A matrix, \(A\), is a rectangular array of elements. It has a number of rows and a number of columns. For example, the matrix \(A \in \mathbb{R}^{m \times n}\) is a matrix which has \(m\) rows and \(n\) columns of real numbers.</p>
-            <p>The column vectors we have seen before can be thought of as a kind of matrix. If, for example, we have a column vector \(\boldsymbol{x}\) with \(n\) real numberr components, that can be thought of as a matrix of the form \(\boldsymbol{x} \in \mathbb{R}^{n \times 1}\). Similarly a row vector of the same structure can be thought of as a matrix of the form \(\boldsymbol{x} \in \mathbb{R}^{1 \times n}\)</p>
+            <p>The column vectors we have seen before can be thought of as a kind of matrix. If, for example, we have a column vector \(\boldsymbol{x}\) with \(n\) real number components, that can be thought of as a matrix of the form \(\boldsymbol{x} \in \mathbb{R}^{n \times 1}\). Similarly a row vector of the same structure can be thought of as a matrix of the form \(\boldsymbol{x} \in \mathbb{R}^{1 \times n}\)</p>
             <p>Matrices, like vectors, can also be transposed. Suppose we have some matrix \(A\) with \(m\) rows and \(n\) columns:</p>
             $$ 
                 \begin{array}{ll}
@@ -519,8 +559,8 @@
                     \text{Let } f:\mathbb{R}^{2} \rightarrow \mathbb{R}^{m}, m \in \mathbb{N}^{+} \\
                     \text{Let } \boldsymbol{x^{*}} \in \mathbb{R}^{2} \mid \nabla f(\boldsymbol{x^{*}}) = 0\\
                     \det \left(\boldsymbol{H(x^{*})} \right) \gt 0 \\
-                    & \land \frac{\partial^{2} f}{\partial x^{2}}(\boldsymbol{x^{*}}) \gt 0 \iff \boldsymbol{x^{*}} \text{ is a local minimum} \\
-                    & \land \frac{\partial^{2} f}{\partial x^{2}}(\boldsymbol{x^{*}}) \lt 0 \iff \boldsymbol{x^{*}} \text{ is a local maximum} \\
+                    & \land \frac{\partial^{2} f}{\partial x_{1}^{2}}(\boldsymbol{x^{*}}) \gt 0 \iff \boldsymbol{x^{*}} \text{ is a local minimum} \\
+                    & \land \frac{\partial^{2} f}{\partial x_{1}^{2}}(\boldsymbol{x^{*}}) \lt 0 \iff \boldsymbol{x^{*}} \text{ is a local maximum} \\
                     \det \left(\boldsymbol{H(x^{*})} \right) \lt 0 & \iff \boldsymbol{x^{*}} \text{ is a saddle point} \\
                     \det \left(\boldsymbol{H(x^{*})} \right) = 0 & \iff \boldsymbol{x^{*}} \text{ is inconclusive} \\
                 \end{array}
